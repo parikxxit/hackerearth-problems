@@ -78,6 +78,7 @@ int main() {
 */
 
 // Write your code here
+`
 #include <bits/stdc++.h>
 using namespace std;
 class codeStreak {
@@ -124,3 +125,4 @@ main() {
         cout << res[i] << endl;
     }
 }
+`
