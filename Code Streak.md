@@ -62,52 +62,49 @@ In second tests case, longest range of correct submission is third to fifth i.e 
 Third test case is quite obvious now.
 
 
-`
-#include <bits/stdc++.h>
-
-using namespace std; <br>
-class codeStreak { <br>
-    int *results; <br>
-    long int len; <br>
-    long int ones; <br>
-    public : <br>
-        codeStreak(long int s){ <br>
-            results = new int[s]();<br>
-            len = s;<br>
-            ones = 0;<br>
-        }<br>
-        void insert(int pos, int res) {<br>
-            if(res){<br>
-                results[pos-1] = 1;<br>
-            }<br>
-        }<br>
-        int countOne(){<br>
-            for(long int i = 0; i < len; i++) {<br>
-                if(results[i])<br>
-                    ones++;<br>
-            }<br>
-            return ones;<br>
-        }<br>
-};<br>
-main() {<br>
-    int t;<br>
-    cin >> t;<br>
-    int n,p,r;<br>
-    int *res = new int[t];<br>
-    for(int test = 0; test < t; test++) {<br>
-        //logic<br>
-        cin >> n;<br>
-        codeStreak c(n);<br>
-        for(int i = 0; i < n; i++) {<br>
-            cin >> p;<br>
-            cin >> r;<br>
-            c.insert(p,r);<br>
-        }<br>
-        res[test] = c.countOne();<br>
-    }<br>
-    sort(res, res+t);<br>
-    for(int i = 0; i < t; i++) {<br>
-        cout << res[i] << endl;<br>
-    }<br>
-}<br>
-`
+`#include <bits/stdc++.h>
+using namespace std; 
+class codeStreak { 
+    int *results; 
+    long int len; 
+    long int ones; 
+    public : 
+        codeStreak(long int s){ 
+            results = new int[s]();
+            len = s;
+            ones = 0;
+        }
+        void insert(int pos, int res) {
+            if(res){
+                results[pos-1] = 1;
+            }
+        }
+        int countOne(){
+            for(long int i = 0; i < len; i++) {
+                if(results[i])
+                    ones++;
+            }
+            return ones;
+        }
+};
+main() {
+    int t;
+    cin >> t;
+    int n,p,r;
+    int *res = new int[t];
+    for(int test = 0; test < t; test++) {
+        //logic
+        cin >> n;
+        codeStreak c(n);
+        for(int i = 0; i < n; i++) {
+            cin >> p;
+            cin >> r;
+            c.insert(p,r);
+        }
+        res[test] = c.countOne();
+    }
+    sort(res, res+t);
+    for(int i = 0; i < t; i++) {
+        cout << res[i] << endl;
+    }
+}`
