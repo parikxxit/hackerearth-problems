@@ -61,99 +61,66 @@ In second tests case, longest range of correct submission is third to fifth i.e 
 
 Third test case is quite obvious now.
 
+/*
+// Sample code to perform I/O:
 
-`
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int num;
+	cin >> num;										// Reading input from STDIN
+	cout << "Input number is " << num << endl;		// Writing output to STDOUT
+}
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
 #include <bits/stdc++.h>
-
-using namespace std; 
-
-class codeStreak { 
-
-int *results; 
-
-long int len;
-
-long int ones; 
-
-public : 
-
-codeStreak(long int s){ 
-
-results = new int[s]();
-
-len = s;
-
-ones = 0;
-
-}
-
-void insert(int pos, int res) {
-
-if(res){
-
-results[pos-1] = 1;
-
-}
-
-}
-
-int countOne(){
-
-for(long int i = 0; i < len; i++) {
-
-if(results[i])
-
-ones++;
-
-}
-
-return ones;
-
-}
-
+using namespace std;
+class codeStreak {
+    int *results;
+    long int len;
+    long int ones;
+    public :
+        codeStreak(long int s){
+            results = new int[s]();
+            len = s;
+            ones = 0;
+        }
+        void insert(int pos, int res) {
+            if(res){
+                results[pos-1] = 1;
+            }
+        }
+        int countOne(){
+            for(long int i = 0; i < len; i++) {
+                if(results[i])
+                    ones++;
+            }
+            return ones;
+        }
 };
-
 main() {
-
-int t;
-
-cin >> t;
-
-int n,p,r;
-
-int *res = new int[t];
-
-for(int test = 0; test < t; test++) {
-
-//logic
-
-cin >> n;
-
-codeStreak c(n);
-
-for(int i = 0; i < n; i++) {
-
-cin >> p;
-
-cin >> r;
-
-c.insert(p,r);
-
-
+    int t;
+    cin >> t;
+    int n,p,r;
+    int *res = new int[t];
+    for(int test = 0; test < t; test++) {
+        //logic
+        cin >> n;
+        codeStreak c(n);
+        for(int i = 0; i < n; i++) {
+            cin >> p;
+            cin >> r;
+            c.insert(p,r);
+        }
+        res[test] = c.countOne();
+    }
+    sort(res, res+t);
+    for(int i = 0; i < t; i++) {
+        cout << res[i] << endl;
+    }
 }
-
-res[test] = c.countOne();
-
-}
-
-sort(res, res+t);
-
-for(int i = 0; i < t; i++) {
-
-cout << res[i] << endl;
-
-}
-
-}
-
-`
