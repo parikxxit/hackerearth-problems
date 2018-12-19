@@ -63,6 +63,7 @@ Third test case is quite obvious now.
 
 
 `#include <bits/stdc++.h>
+
 using namespace std; 
 class codeStreak { 
     int *results; 
