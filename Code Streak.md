@@ -62,12 +62,12 @@ In second tests case, longest range of correct submission is third to fifth i.e 
 Third test case is quite obvious now.
 
 
-`#include <bits/stdc++.h>
-
+`
+#include <bits/stdc++.h>
 using namespace std; 
 class codeStreak { 
     int *results; 
-    long int len; 
+    long int len;` 
     long int ones; 
     public : 
         codeStreak(long int s){ 
@@ -108,4 +108,4 @@ main() {
     for(int i = 0; i < t; i++) {
         cout << res[i] << endl;
     }
-}`
+}
